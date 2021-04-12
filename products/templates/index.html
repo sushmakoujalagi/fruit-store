@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fruits Store</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <br>
+    <br>
+        <h2 class="text-center">Products</h2>
+    <br>
+        <div class="row">
+            {% for product in products %}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ product.image_url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name  }}</h5>
+                        <p class="card-text">{{ product.price }}</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endblock %}
+</body>
+</html>
